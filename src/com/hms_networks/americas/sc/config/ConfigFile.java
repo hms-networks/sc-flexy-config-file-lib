@@ -24,21 +24,21 @@ public abstract class ConfigFile {
    *
    * @return configuration file path
    */
-  abstract String getConfigFilePath();
+  public abstract String getConfigFilePath();
 
   /**
    * Gets the indent factor used when saving the configuration to file.
    *
    * @return JSON file indent factor
    */
-  abstract int getJSONIndentFactor();
+  public abstract int getJSONIndentFactor();
 
   /**
    * Creates a configuration JSON object containing fields and their default values.
    *
    * @return configuration object with defaults
    */
-  abstract JSONObject getDefaultConfigurationObject();
+  public abstract JSONObject getDefaultConfigurationObject();
 
   /**
    * Reads the configuration from the file at the file path specified in {@link
