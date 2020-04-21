@@ -17,7 +17,7 @@ import java.io.IOException;
  */
 public abstract class ConfigFile {
   /** Configuration object */
-  JSONObject configurationObject;
+  public JSONObject configurationObject;
 
   /**
    * Gets the file path for reading and saving the configuration to disk.
