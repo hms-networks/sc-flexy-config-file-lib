@@ -6,6 +6,7 @@ import com.hms_networks.americas.sc.config.exceptions.ConfigFileWriteException;
 import com.hms_networks.americas.sc.json.JSONException;
 import com.hms_networks.americas.sc.json.JSONObject;
 
+import java.io.File;
 import java.io.IOException;
 
 /**
@@ -86,5 +87,15 @@ public abstract class ConfigFile {
           "Unable to write configuration to disk. Invalid file path or configuration object specified.",
           e);
     }
+  }
+
+  /**
+   * Gets a boolean representing the presence of the configuration file in the file system.
+   *
+   * @return true if configuration file exists on in the file system
+   */
+  public boolean fileExists() {
+    File configFile = new File(getConfigFilePath());
+    return configFile.isFile();
   }
 }
