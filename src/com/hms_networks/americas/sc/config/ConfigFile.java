@@ -38,7 +38,7 @@ public abstract class ConfigFile {
    *
    * @return configuration object with defaults
    */
-  public abstract JSONObject getDefaultConfigurationObject();
+  public abstract JSONObject getDefaultConfigurationObject() throws JSONException;
 
   /**
    * Reads the configuration from the file at the file path specified in {@link
