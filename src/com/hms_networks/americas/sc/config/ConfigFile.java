@@ -57,7 +57,14 @@ public abstract class ConfigFile {
        * If unable to read from file, use default config and rethrow exception as a more
        * human-readable exception with an explanation.
        */
-      configurationObject = getDefaultConfigurationObject();
+      try {
+        configurationObject = getDefaultConfigurationObject();
+      } catch (JSONException e2) {
+        throw new ConfigFileReadException(
+            "Failed to create a default configuration while handling an error with reading "
+                + "the configuration from file. Check the specified file path.",
+            e2);
+      }
       throw new ConfigFileReadException(
           "Unable to read configuration from disk. Check the specified file path.", e);
     } catch (JSONException e) {
@@ -65,7 +72,14 @@ public abstract class ConfigFile {
        * If unable to parse file, use default config and rethrow exception as a more
        * human-readable exception with an explanation.
        */
-      configurationObject = getDefaultConfigurationObject();
+      try {
+        configurationObject = getDefaultConfigurationObject();
+      } catch (JSONException e2) {
+        throw new ConfigFileParseException(
+            "Failed to create a default configuration while handling an error with parsing "
+                + "the configuration file. Check the file format and contents.",
+            e2);
+      }
       throw new ConfigFileParseException(
           "Unable to parse configuration from disk. Check the file format and contents.", e);
     }
@@ -107,7 +121,12 @@ public abstract class ConfigFile {
    * @throws ConfigFileWriteException if unable to write to file
    */
   public void loadAndSaveDefaultConfiguration() throws ConfigFileWriteException {
-    configurationObject = getDefaultConfigurationObject();
+    try {
+      configurationObject = getDefaultConfigurationObject();
+    } catch (JSONException e) {
+      throw new ConfigFileWriteException(
+          "Unable to create default configuration for write to file.", e);
+    }
     save();
   }
 }
