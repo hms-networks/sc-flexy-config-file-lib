@@ -98,4 +98,16 @@ public abstract class ConfigFile {
     File configFile = new File(getConfigFilePath());
     return configFile.isFile();
   }
+
+
+
+  /**
+   * Loads the default configuration contents into memory and writes to the file system.
+   *
+   * @throws ConfigFileWriteException if unable to write to file
+   */
+  public void loadAndSaveDefaultConfiguration() throws ConfigFileWriteException {
+    configurationObject = getDefaultConfigurationObject();
+    save();
+  }
 }
