@@ -5,7 +5,6 @@ import com.hms_networks.americas.sc.config.exceptions.ConfigFileReadException;
 import com.hms_networks.americas.sc.config.exceptions.ConfigFileWriteException;
 import com.hms_networks.americas.sc.json.JSONException;
 import com.hms_networks.americas.sc.json.JSONObject;
-
 import java.io.File;
 import java.io.IOException;
 
@@ -98,7 +97,8 @@ public abstract class ConfigFile {
     } catch (Exception e) {
       // If an exception occurs, rethrow it as a more human-readable exception with an explanation.
       throw new ConfigFileWriteException(
-          "Unable to write configuration to disk. Invalid file path or configuration object specified.",
+          "Unable to write configuration to disk. Invalid file path or configuration object"
+              + " specified.",
           e);
     }
   }
@@ -112,8 +112,6 @@ public abstract class ConfigFile {
     File configFile = new File(getConfigFilePath());
     return configFile.isFile();
   }
-
-
 
   /**
    * Loads the default configuration contents into memory and writes to the file system.

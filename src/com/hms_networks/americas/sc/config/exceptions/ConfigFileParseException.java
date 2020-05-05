@@ -9,8 +9,8 @@ package com.hms_networks.americas.sc.config.exceptions;
  */
 public class ConfigFileParseException extends ConfigFileException {
   /**
-   * Constructor providing for a human-readable explanation for a config file parsing exception,
-   * and a throwable for the backtrace.
+   * Constructor providing for a human-readable explanation for a config file parsing exception, and
+   * a throwable for the backtrace.
    *
    * @param s human-readable explanation
    * @param t throwable for backtrace
