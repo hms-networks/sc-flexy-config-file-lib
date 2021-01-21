@@ -17,7 +17,7 @@ A library for managing application configs and storing them as files on Ewon Fle
 
 ## [Developer Documentation](#table-of-contents)
 
-Developer documentation is available in Javadoc format at [https://hms-networks.github.io/sc-flexy-config-file-lib/index.html](https://hms-networks.github.io/sc-flexy-config-file-lib/index.html).
+Developer documentation is available in Javadoc format found in the release package [https://github.com/hms-networks/sc-flexy-config-file-lib/releases](https://github.com/hms-networks/sc-flexy-config-file-lib/releases).
 
 ## [Dependencies](#table-of-contents)
 1. [sc-flexy-json-lib](https://github.com/hms-networks/sc-flexy-json-lib)
